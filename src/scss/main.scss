@@ -1,0 +1,36 @@
+// Colors
+$primary: #476B7A;
+$secondary: #9CB3A7;
+$light: #D7E0C5;
+$lightest: #FCFFF6;
+$dark: #1A3B4A;
+
+* { box-sizing: border-box; }
+
+html,body {height: 100%;}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  height: 80px;
+  background: $lightest;
+  box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.20);
+}
+
+header {
+  height: 350px;
+  background: $dark;
+  background-image: url(https://unsplash.it/1600/800/?random);
+  background-size: cover;
+}
+
+@media(max-width: 768px){
+  header {
+    height: 100vh;
+  }
+
+
+}
