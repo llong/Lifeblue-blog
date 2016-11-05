@@ -10,14 +10,58 @@ $dark: #1A3B4A;
 html,body {height: 100%;}
 
 body {
-  padding: 0;
+  padding-top: 60px;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: $lightest;
 }
 
 nav {
-  height: 80px;
+  height: 60px;
+  width: 100%;
   background: $lightest;
   box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.20);
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 60px;
+
+  ul {
+    list-style: none;
+    float: right;
+    margin: 0 20px 0 0;
+
+    li {
+      display: inline-block;
+      float: left;
+    }
+
+    li > a {
+      display: block;
+      color: $primary;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    li > a:hover {
+      color: $secondary;
+    }
+  }
+
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: $secondary;
+  text-decoration: none;
+  color: $lightest;
+
+  &.primary {
+    background: $primary;
+  }
 }
 
 header {
@@ -25,12 +69,131 @@ header {
   background: $dark;
   background-image: url(https://unsplash.it/1600/800/?random);
   background-size: cover;
+  position: relative;
+  margin-bottom: 100px;
 }
+
+
+.signup {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba($light,.8);
+  position: absolute;
+  padding: 20px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,50%);
+
+  > div {
+    flex: 0 0 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: $dark;
+  }
+
+  > input {
+    flex: 1 0;
+  }
+}
+
+input[type=text] {
+  padding: 8px 16px;
+  border: none;
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+h3 {
+  position: relative;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+  color: $secondary;
+
+  span {
+    background: $lightest;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    background: $light;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 300;
+  color: $primary;
+  margin: 10px 0;
+}
+
+.latest-articles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: top;
+  justify-content: center;
+
+  > div {
+    width: calc(33% - 18px);
+    margin: 10px;
+
+    > p {
+      color: $secondary;
+      font-size: 14px;
+    }
+  }
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.popular-content {
+  padding: 20px;
+  margin: 20px 0;
+  background: $secondary;
+}
+
+footer {
+  background: $light;
+  color: $secondary;
+  height: 40px;
+  line-height: 40px;
+}
+
 
 @media(max-width: 768px){
   header {
-    height: 100vh;
+    height: calc(100vh - 80px);
   }
 
+  .signup {
+    left: 0;
+    transform: translate(0,0);
+    width: 100%;
+  }
 
+  .latest-articles {
+
+    > div {
+      width: 100%;
+    }
+  }
 }

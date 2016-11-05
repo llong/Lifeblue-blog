@@ -1,0 +1,1 @@
+var date=new Date,year=date.getFullYear(),copywriteYear=document.getElementById("currentYear");copywriteYear.innerText=year+" ";
