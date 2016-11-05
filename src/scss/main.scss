@@ -4,6 +4,13 @@ $secondary: #9CB3A7;
 $light: #D7E0C5;
 $lightest: #FCFFF6;
 $dark: #1A3B4A;
+$accent: invert($dark);
+
+@import 'popular-content';
+@import 'nav';
+@import 'header';
+@import 'latest-articles';
+@import 'footer';
 
 * { box-sizing: border-box; }
 
@@ -16,40 +23,8 @@ body {
   background: $lightest;
 }
 
-nav {
-  height: 60px;
-  width: 100%;
-  background: $lightest;
-  box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.20);
-  z-index: 3;
-  position: fixed;
-  top: 0;
-  left: 0;
-  line-height: 60px;
-
-  ul {
-    list-style: none;
-    float: right;
-    margin: 0 20px 0 0;
-
-    li {
-      display: inline-block;
-      float: left;
-    }
-
-    li > a {
-      display: block;
-      color: $primary;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 0 20px;
-    }
-
-    li > a:hover {
-      color: $secondary;
-    }
-  }
-
+a {
+  color: $primary;
 }
 
 .btn {
@@ -61,50 +36,6 @@ nav {
 
   &.primary {
     background: $primary;
-  }
-}
-
-header {
-  height: 350px;
-  background: $dark;
-  background-image: url(https://unsplash.it/1600/800/?random);
-  background-size: cover;
-  position: relative;
-  margin-bottom: 100px;
-}
-
-@keyframes fadeSignUp {
-  from {
-    opacity: 0;
-    bottom: 100%;
-  }
-  to {
-    opacity: 1;
-    bottom: 0;
-  }
-}
-
-.signup {
-  width: 400px;
-  display: flex;
-  flex-wrap: wrap;
-  background: rgba($light,.8);
-  position: absolute;
-  padding: 20px;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%,50%);
-  animation: fadeSignUp 1.5s ease-out;
-
-  > div {
-    flex: 0 0 100%;
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: $dark;
-  }
-
-  > input {
-    flex: 1 0;
   }
 }
 
@@ -154,45 +85,54 @@ h4 {
   margin: 10px 0;
 }
 
-.latest-articles {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: top;
-  justify-content: center;
 
-  > div {
-    width: calc(33% - 18px);
-    margin: 10px;
-
-    > p {
-      color: $secondary;
-      font-size: 14px;
-    }
-  }
-}
 
 .img-fluid {
   width: 100%;
   height: auto;
 }
 
-.popular-content {
-  padding: 20px;
-  margin: 20px 0;
-  background: $secondary;
-}
-
-footer {
+.light-bg {
   background: $light;
-  color: $secondary;
-  height: 40px;
-  line-height: 40px;
 }
 
 
+// Mobile Styling
 @media(max-width: 768px){
+  nav {
+    > ul {
+      background: rgba($lightest,.8);
+      float: none;
+      position: fixed;
+      height: 100%;
+      width: 300px;
+      margin: 0;
+      padding: 0;
+      top: 60px;
+      right: 0;
+      transform: translateX(300px);
+      transition: all 200ms linear;
+
+      &.open {
+        transform: translateX(0);
+      }
+
+      > li {
+        float: none;
+        display: block;
+        border-bottom: 1px solid $light;
+      }
+    }
+
+    #mobile-menu {
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+
+
   header {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
   }
 
   .signup {
@@ -201,7 +141,7 @@ footer {
     width: 100%;
   }
 
-  .latest-articles {
+  .latest-articles,.popular-content {
 
     > div {
       width: 100%;

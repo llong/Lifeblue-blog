@@ -1,1 +1,1 @@
-var date=new Date,year=date.getFullYear(),copywriteYear=document.getElementById("currentYear");copywriteYear.innerText=year+" ";
+var date=new Date,year=date.getFullYear(),copywriteYear=document.getElementById("currentYear");copywriteYear.innerText=year+" ";var mobileBtn=document.getElementById("mobile-menu"),mobileMenu=document.getElementById("menu");mobileBtn.addEventListener("click",function(){""==mobileMenu.classList?mobileMenu.classList="open":mobileMenu.classList=""});

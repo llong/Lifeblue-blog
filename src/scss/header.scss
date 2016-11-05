@@ -1,0 +1,43 @@
+header {
+  height: 350px;
+  background: $dark;
+  background-image: url(https://unsplash.it/1600/800/?random);
+  background-size: cover;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+@keyframes fadeSignUp {
+  from {
+    opacity: 0;
+    bottom: 100%;
+  }
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+.signup {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba($light,.8);
+  position: absolute;
+  padding: 20px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,50%);
+  animation: fadeSignUp 1.5s ease-out;
+
+  > div {
+    flex: 0 0 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: $dark;
+  }
+
+  > input {
+    flex: 1 0;
+  }
+}

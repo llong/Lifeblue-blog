@@ -1,0 +1,16 @@
+.latest-articles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: top;
+  justify-content: center;
+
+  > div {
+    width: calc(33% - 18px);
+    margin: 10px;
+
+    > p {
+      color: $secondary;
+      font-size: 14px;
+    }
+  }
+}
