@@ -3,6 +3,8 @@ header {
   background: $dark;
   background-image: url(https://unsplash.it/1600/800/?random);
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: relative;
   margin-bottom: 100px;
 }
@@ -38,6 +40,10 @@ header {
   }
 
   > input {
-    flex: 1 0;
+    width: 70%;
+  }
+
+  .btn {
+    flex: 0 0 30%;
   }
 }

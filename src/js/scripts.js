@@ -16,4 +16,12 @@ mobileBtn.addEventListener('click', function(){
   } else {
     mobileMenu.classList = "";
   }
+});
+
+var fullArchive = document.getElementsByClassName('full-archive')[0];
+var showArchive = document.getElementById('showArchive');
+
+showArchive.addEventListener('click', function(){
+  fullArchive.style.display = 'flex';
+  this.style.display = 'none';
 })

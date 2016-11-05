@@ -10,6 +10,7 @@ $accent: invert($dark);
 @import 'nav';
 @import 'header';
 @import 'latest-articles';
+@import 'archive';
 @import 'footer';
 
 * { box-sizing: border-box; }
@@ -25,6 +26,7 @@ body {
 
 a {
   color: $primary;
+  text-decoration: none;
 }
 
 .btn {
@@ -33,6 +35,7 @@ a {
   background: $secondary;
   text-decoration: none;
   color: $lightest;
+  text-align: center;
 
   &.primary {
     background: $primary;
@@ -100,8 +103,8 @@ h4 {
 // Mobile Styling
 @media(max-width: 768px){
   nav {
-    > ul {
-      background: rgba($lightest,.8);
+     ul {
+      background: rgba($light,.9);
       float: none;
       position: fixed;
       height: 100%;
@@ -117,10 +120,33 @@ h4 {
         transform: translateX(0);
       }
 
+      > li:last-of-type > ul {
+        transform: translateX(0);
+      }
+
       > li {
         float: none;
         display: block;
-        border-bottom: 1px solid $light;
+
+        > ul {
+          opacity: 1;
+          position: relative;
+          left: 0;
+          transform: translateX(0);
+          display: block;
+          width: 100%;
+          background: none;
+
+          > li a {
+            color: $primary;
+            margin-left: 10px;
+
+            &:hover {
+              background: none;
+              color: $dark;
+            }
+          }
+        }
       }
     }
 

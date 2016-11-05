@@ -1,0 +1,28 @@
+.archive {
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      width: 25%;
+      margin: 20px 0;
+    }
+  }
+
+  .full-archive {
+    display: none;
+  }
+}
+
+@media(max-width:768px){
+  .archive {
+    ul {
+      > li {
+        width: 100%;
+      }
+    }
+  }
+}

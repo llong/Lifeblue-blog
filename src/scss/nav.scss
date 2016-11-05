@@ -38,8 +38,20 @@ nav {
       position: relative;
       padding: 20px 0;
 
+      &:hover > ul {
+        z-index: 1;
+        opacity: 1;
+      }
+
       &:last-of-type > ul {
         transform: translateX(-20px);
+      }
+
+      a.has-submenu:after {
+        content: '\25BC';
+        font-size: 8px;
+        margin-left: 2px;
+        vertical-align: middle;
       }
 
       > ul {
@@ -50,7 +62,9 @@ nav {
         top: 100%;
         left: 0;
         z-index: -1;
-        background: rgba($dark,.8);
+        opacity: 0;
+        background: rgba($dark,.9);
+        transition: all 250ms linear;
 
         > li {
           width: 100%;
