@@ -7,6 +7,18 @@
   > div {
     width: calc(33% - 18px);
     margin: 10px;
+    position: relative;
+
+    > div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      font-size: 14px;
+      background: rgba($dark,.8);
+      color: $light;
+      z-index: 5;
+    }
 
     > p {
       color: $secondary;
