@@ -102,60 +102,6 @@ h4 {
 
 // Mobile Styling
 @media(max-width: 768px){
-  nav {
-     ul {
-      background: rgba($light,.9);
-      float: none;
-      position: fixed;
-      height: 100%;
-      width: 300px;
-      margin: 0;
-      padding: 0;
-      top: 60px;
-      right: 0;
-      transform: translateX(300px);
-      transition: all 200ms linear;
-
-      &.open {
-        transform: translateX(0);
-      }
-
-      > li:last-of-type > ul {
-        transform: translateX(0);
-      }
-
-      > li {
-        float: none;
-        display: block;
-
-        > ul {
-          opacity: 1;
-          position: relative;
-          left: 0;
-          transform: translateX(0);
-          display: block;
-          width: 100%;
-          background: none;
-
-          > li a {
-            color: $primary;
-            margin-left: 10px;
-
-            &:hover {
-              background: none;
-              color: $dark;
-            }
-          }
-        }
-      }
-    }
-
-    #mobile-menu {
-      display: inline-block;
-      cursor: pointer;
-    }
-  }
-
 
   header {
     height: calc(100vh - 60px);
