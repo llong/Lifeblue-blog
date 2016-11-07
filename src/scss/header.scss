@@ -1,12 +1,24 @@
 header {
   height: 350px;
   background: $dark;
-  background-image: url(https://unsplash.it/1600/800/?random);
+  background-image: url(https://unsplash.it/1600/800/?image=426);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   position: relative;
   margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-weight: 300;
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+    color: $dark;
+    margin: 0 20px;
+  }
 }
 
 @keyframes fadeSignUp {
@@ -45,5 +57,13 @@ header {
 
   .btn {
     flex: 0 0 30%;
+  }
+}
+
+@media(max-width:768px){
+  header {
+    h1 {
+      transform: translateY(-106px);
+    }
   }
 }
