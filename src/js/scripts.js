@@ -9,14 +9,26 @@ copywriteYear.innerText = year + ' ';
 // Mobile menu
 var mobileBtn = document.getElementById('mobile-menu');
 var mobileMenu = document.getElementById('menu');
+var modal = document.getElementById('modal-overlay');
+
 // Open and close menu when hamburger is clicked
 mobileBtn.addEventListener('click', function(){
   if(mobileMenu.classList == ""){
     mobileMenu.classList = "open";
+    modal.style.display = "block";
   } else {
     mobileMenu.classList = "";
+    modal.style.display = "none";
   }
 });
+
+// Close mobile menu if user clicks outside menu
+window.addEventListener('click', function(event){
+  if(event.target === modal) {
+    modal.style.display = "none";
+    mobileMenu.classList = "";
+  }
+})
 
 var fullArchive = document.getElementsByClassName('full-archive')[0];
 var showArchive = document.getElementById('showArchive');
