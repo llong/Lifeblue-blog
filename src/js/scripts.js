@@ -30,6 +30,8 @@ window.addEventListener('click', function(event){
   }
 })
 
+
+// Show full archive of posts by month. Hide more button on click
 var fullArchive = document.getElementsByClassName('full-archive')[0];
 var showArchive = document.getElementById('showArchive');
 
